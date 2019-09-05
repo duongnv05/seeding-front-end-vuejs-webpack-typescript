@@ -1,0 +1,50 @@
+{
+  "name": "seeding-front-end-vuejs-webpack-typescript",
+  "version": "1.0.0",
+  "description": "The project front-end build webpack, vue with typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot"
+  },
+  "author": "Duong Nguyen - duongnv.05@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^3.6.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.1.0",
+    "vue-cookies": "^1.5.13",
+    "vue-loader": "^14.2.2",
+    "vue-property-decorator": "^8.2.2",
+    "vue-router": "^3.1.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "vuex": "^3.1.1",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-typescript": "^3.6.0",
+    "@vue/cli-plugin-eslint": "^3.2.0",
+    "@vue/cli-service": "^3.2.0",
+    "axios": "^0.19.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.2.0",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0-0",
+    "file-loader": "^4.2.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.0.4"
+  },
+  "globals": {
+    "vue-jest": {
+      "tsConfigFile": "tsconfig.json"
+    }
+  }
+}
