@@ -13,13 +13,27 @@ module.exports = {
   watch: true,
   module: {
     rules: [
+      // {
+      //   test: /\.scss$/,
+      //   use: [
+      //     { loader: "style-loader"}, 
+      //     { loader: "css-loader" }, 
+      //     { loader: "sass-loader" }
+      //   ],
+      // },
       {
-        test: /\.scss$/,
+        test: /\.ts$/,
         use: [
-          { loader: "style-loader"}, 
-          { loader: "css-loader" }, 
-          { loader: "sass-loader" }
+          'babel-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              appendTsSuffixTo: [/\.vue$/],
+              appendTsxSuffixTo: [/\.vue$/]
+            }
+          }
         ],
+        exclude: /node_modules/,
       },
       {
         test: /\.vue$/,
@@ -33,17 +47,17 @@ module.exports = {
               'vue-style-loader',
               'css-loader',
               'sass-loader'
+            ],
+            'ts': [
+              {
+                loader: 'ts-loader',
+                options: {
+                    appendTsSuffixTo: [/\.vue$/]
+                }
+              }
             ]
           }
           // other vue-loader options go here
-        }
-      },
-      {
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/,
-        options: {
-          appendTsSuffixTo: [/\.vue$/],
         }
       },
       // {
@@ -65,7 +79,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     },
     modules: ['node_modules', 'src'],
-    extensions: ['*', '.ts', '.js', '.vue', '.json', '.scss']
+    extensions: ['.ts', '.js', '.vue', '.json']
   },
   devServer: {
     contentBase: path.join(__dirname, "/public"),
@@ -76,7 +90,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map',
+  devtool: 'source-map',
   optimization: {
     minimizer: [
       // we specify a custom UglifyJsPlugin here to get source maps in production

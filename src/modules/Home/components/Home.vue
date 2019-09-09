@@ -1,18 +1,21 @@
 <template>
   <div class="__home__">
     <div class="wrapper">
-      <h1>home page said: {{hello}}</h1>
+      <h1 @click="onShow()">home page said: {{hello}}</h1>
     </div>
   </div>
 </template>
 
-<script class="ts">
-  import { Component, Vue, Data } from 'vue-property-decorator'
+<script lang="ts">
+  import { Component, Vue } from 'vue-property-decorator'
 
   @Component
   export default class Home extends Vue {
+    hello: string = 'allalalal';
 
-    hello = 'data haa';
+    onShow() {
+      console.log(this.hello)
+    }
   }
 </script>
 

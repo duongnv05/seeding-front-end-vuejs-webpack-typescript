@@ -14,9 +14,7 @@ export const createApp = () => {
   const appRoot = new Vue({
     router,
     store,
-    created() {
-      console.log(this)
-    },
+    created() { console.log("@@@") },
     render: h => h(App)
   })
 
